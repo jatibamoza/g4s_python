@@ -1,0 +1,17 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:v1="http://ws.hc2.dc.com/v1">
+    <soapenv:Header>
+        %%WSSE_HEADER%%
+    </soapenv:Header>
+    <soapenv:Body wsu:Id="Body" xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+        <v1:consultarHC2>
+            <v1:solicitud>
+                <v1:clave>${clave}</v1:clave>
+                <v1:identificacion>${identificacion}</v1:identificacion>
+                <v1:primerApellido>${primerApellido}</v1:primerApellido>
+                <v1:producto>${producto}</v1:producto>
+                <v1:tipoIdentificacion>${tipoIdentificacion}</v1:tipoIdentificacion>
+                <v1:usuario>${usuario}</v1:usuario>
+            </v1:solicitud>
+        </v1:consultarHC2>
+    </soapenv:Body>
+</soapenv:Envelope>
