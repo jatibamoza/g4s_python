@@ -1,5 +1,6 @@
 from utils.signer import sign_soap
 from lxml import etree
+from hc2_parser  import HC2ResponseParser
 import requests
 
 WSDL_URL = "https://demo-servicesesb.datacredito.com.co:443/wss/dhws3/services/DHServicePlus"
@@ -25,4 +26,5 @@ def consultar_persona(data):
         headers=headers,
         cert=("cert.pem", "key.pem")  # Certificados SSL para handshake HTTPS
     )
-    return response.text
+    json_result = HC2ResponseParser.extract_json_from_cdata(response.text)
+    return json_result
