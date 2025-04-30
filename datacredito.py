@@ -26,6 +26,6 @@ def consultar_persona(data):
         headers=headers,
         cert=("cert.pem", "key.pem")  # Certificados SSL para handshake HTTPS
     )
-    #json_result = HC2ResponseParser.extract_json_from_cdata(response.text)
-    #return json_result
-    return response.text
+    json_result = HC2ResponseParser.extract_inner_xml_from_cdata(response.text)
+    return json_result
+    #return response.text
