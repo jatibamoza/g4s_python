@@ -26,13 +26,13 @@ class HC2ResponseParser:
 
         cdata_node = root.find('.//ws:consultarHC2Return', namespaces)
         if cdata_node is None or cdata_node.text is None:
-            raise ValueError("No se encontró el nodo consultarHC2Return con CDATA.")
+            raise ValueError("No se encontro el nodo consultarHC2Return con CDATA. xml_string: " + xml_string)
 
         cdata_text = cdata_node.text.strip()
 
         json_match = re.search(r'{.*}', cdata_text, re.DOTALL)
         if not json_match:
-            raise ValueError("No se encontró un contenido JSON válido dentro del CDATA.")
+            raise ValueError("No se encontro un contenido JSON valido dentro del CDATA.")
 
         try:
             json_object = json.loads(json_match.group())
