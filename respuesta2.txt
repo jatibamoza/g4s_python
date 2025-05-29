@@ -1,0 +1,7 @@
+<soap:Envelope>
+  <soap:Body>
+    <ns2:consultarHC2Response>
+      <consultarHC2Return><![CDATA[{"resultado":"OK"}]]></consultarHC2Return>
+    </ns2:consultarHC2Response>
+  </soap:Body>
+</soap:Envelope>

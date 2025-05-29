@@ -1,6 +1,7 @@
 from utils.signer import sign_soap
 from lxml import etree
 from hc2_parser  import HC2ResponseParser
+from caracteresespecialesreemplazador  import CaracteresEspecialesReemplazador
 import requests
 
 WSDL_URL = "https://demo-servicesesb.datacredito.com.co:443/wss/dhws3/services/DHServicePlus"
@@ -26,6 +27,13 @@ def consultar_persona(data):
         headers=headers,
         cert=("cert.pem", "key.pem")  # Certificados SSL para handshake HTTPS
     )
-    json_result = HC2ResponseParser.extract_inner_xml_from_cdata(response.text)
+    print("==== RESPUESTA ====")
+    print(response.text)
+    reemplazador = CaracteresEspecialesReemplazador()
+    texto_limpio = reemplazador.reemplazar(response.text)
+    print("==== TEXTO LIMPIO ====")
+    print(texto_limpio)
+    print("==== FIN ====")
+    json_result = HC2ResponseParser.extract_inner_xml_from_cdata(texto_limpio)
     return json_result
     #return response.text
