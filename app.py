@@ -13,6 +13,7 @@ app = Flask(__name__)
 @app.route('/consultar', methods=['POST'])
 def consultar():
     data = request.get_json()
+    
     try:
         resultado = consultar_persona(data)
         return resultado, 200, {'Content-Type': 'text/xml'}
