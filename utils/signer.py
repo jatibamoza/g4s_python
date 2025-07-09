@@ -90,7 +90,7 @@ def sign_soap(xml_string):
     username_token = f"""
     <wsse:UsernameToken>
         <wsse:Username>2-800215227</wsse:Username>
-        <wsse:Password>Colombia2024</wsse:Password>
+        <wsse:Password>ProduccionG4S2025*</wsse:Password>
         <wsse:Nonce>{nonce}</wsse:Nonce>
         <wsu:Created>{created}</wsu:Created>
     </wsse:UsernameToken>

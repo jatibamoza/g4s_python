@@ -5,7 +5,7 @@ from utils.caracteresespecialesreemplazador  import CaracteresEspecialesReemplaz
 from utils.tildesreemplazador  import TildesReemplazador
 import requests
 
-WSDL_URL = "https://demo-servicesesb.datacredito.com.co:443/wss/dhws3/services/DHServicePlus"
+WSDL_URL = "https://servicesesb.datacredito.com.co:443/wss/dhws3/services/DHServicePlus"
 
 def consultar_persona(data):
     # 1. Cargar plantilla
